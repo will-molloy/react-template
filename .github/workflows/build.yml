@@ -31,3 +31,12 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Test
+        run: npm run test
+
+      - name: Upload test coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          name: codecov-build
+          fail_ci_if_error: true
