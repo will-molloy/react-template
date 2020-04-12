@@ -11,3 +11,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Restore cache
+        uses: actions/cache@v1
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-build-cache-${{ hashFiles('package.json') }}
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Build
+        run: npm run build
