@@ -6,12 +6,11 @@
 
 #### Install dependencies and start
 ```
-npm install
+npm i
 npm start
 ```
 
 #### Format code
 ```
-npm install --global prettier
-prettier --write "**/*.js"
+npm run eslint -- --fix
 ```
