@@ -1,6 +1,8 @@
-# sudoku-solver
+# sudoku-solver-react.js
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![build](https://github.com/wilmol/sudoku-solver-react.js/workflows/build/badge.svg?event=push)](https://github.com/wilmol/sudoku-solver-react.js/actions?query=workflow%3Abuild)
+
+(WIP) sudoku solver built with react.js
 
 #### Install dependencies and start
 ```
