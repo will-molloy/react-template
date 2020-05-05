@@ -8,11 +8,8 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "eslint": "eslint \"**/*.{js,jsx}\"",
+    "eslint": "eslint \"src/**/*.{js,jsx}\"",
     "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
