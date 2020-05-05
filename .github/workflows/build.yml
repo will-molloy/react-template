@@ -24,10 +24,10 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-build-cache-${{ hashFiles('package.json') }}
+          key: ${{ runner.os }}-build-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
       - name: ESLint analysis
         run: npm run eslint
@@ -59,14 +59,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # TODO(wilmol) better way to do this and avoid reinstalling dependencies from the 'build' job?
       - name: Restore cache
         uses: actions/cache@v1
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-build-cache-${{ hashFiles('package.json') }}
+          key: ${{ runner.os }}-build-cache-${{ hashFiles('package-lock.json') }}
+
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
       - name: Download build artifact
         uses: actions/download-artifact@master
