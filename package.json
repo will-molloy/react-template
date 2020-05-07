@@ -2,6 +2,8 @@
   "name": "react-template",
   "version": "0.1.0",
   "private": true,
+  "license": "Apache-2.0",
+  "repository": "github:wilmol/react-template",
   "homepage": "https://wilmol.github.io/react-template/",
   "scripts": {
     "start": "react-scripts start",
