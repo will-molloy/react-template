@@ -1,6 +1,6 @@
 * text=auto eol=lf
 
-package-lock.json binary
+*package-lock.json binary
 
 *.ico binary
 *.jpg binary
