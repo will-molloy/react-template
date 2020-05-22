@@ -8,8 +8,8 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js,jsx}',
-    '!src/index.js',
-    '!src/serviceWorker.js',
-    '!src/setupTests.js',
+    '!src/index.tsx',
+    '!src/serviceWorker.ts',
+    '!src/setupTests.ts',
   ],
 };
