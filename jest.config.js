@@ -11,6 +11,7 @@ module.exports = {
     '!src/index.tsx',
     '!src/serviceWorker.ts',
     '!src/setupTests.ts',
+    '!src/react-app-env.d.ts',
   ],
   preset: 'ts-jest',
 };
