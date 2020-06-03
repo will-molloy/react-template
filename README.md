@@ -22,6 +22,7 @@ npm start
 #### Format code
 ```
 npm run eslint -- --fix
+npm run stylelint -- --fix
 ```
 
 #### Deploy
