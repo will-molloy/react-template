@@ -36,6 +36,9 @@ jobs:
       - name: ESLint analysis
         run: npm run eslint
 
+      - name: Stylelint analysis
+        run: npm run stylelint
+
       - name: Build
         run: npm run build
 
