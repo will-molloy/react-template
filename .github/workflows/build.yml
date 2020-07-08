@@ -22,7 +22,7 @@ jobs:
 
       - name: Restore cache
         id: npm-cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ./node_modules
           # cache based on both package.json and package-lock.json
@@ -68,7 +68,7 @@ jobs:
 
       - name: Restore cache
         id: npm-cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ./node_modules
           # cache based on both package.json and package-lock.json
