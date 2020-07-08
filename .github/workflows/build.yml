@@ -91,3 +91,26 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./build
+
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug
+        run: echo "${{ github.event.pusher.name }}"
+
+  automerge-dependencies:
+    needs: build
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: "pascalgn/automerge-action@4536e8847eb62fe2f0ee52c8fa92d17aa97f932f"
+        env:
+          GITHUB_TOKEN: "${{ secrets.PAT }}"
+          MERGE_FILTER_AUTHOR: "dependabot[bot]"
+          MERGE_LABELS: "dependencies"
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "{pullRequest.title} (#{pullRequest.number})"
+          MERGE_DELETE_BRANCH: "true"
+          MERGE_FORKS: "false"
+          UPDATE_LABELS: "disabled"
