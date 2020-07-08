@@ -92,12 +92,6 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./build
 
-  debug:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Debug
-        run: echo "${{ github.event.pusher.name }}"
-
   automerge-dependencies:
     needs: build
     if: github.event_name == 'pull_request'
