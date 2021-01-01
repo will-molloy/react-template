@@ -5,18 +5,18 @@
     "main.js.map": "/react-template/static/js/main.ef825609.chunk.js.map",
     "runtime-main.js": "/react-template/static/js/runtime-main.e1e0d06f.js",
     "runtime-main.js.map": "/react-template/static/js/runtime-main.e1e0d06f.js.map",
-    "static/js/2.7d0a5015.chunk.js": "/react-template/static/js/2.7d0a5015.chunk.js",
-    "static/js/2.7d0a5015.chunk.js.map": "/react-template/static/js/2.7d0a5015.chunk.js.map",
+    "static/js/2.04089adc.chunk.js": "/react-template/static/js/2.04089adc.chunk.js",
+    "static/js/2.04089adc.chunk.js.map": "/react-template/static/js/2.04089adc.chunk.js.map",
     "index.html": "/react-template/index.html",
-    "precache-manifest.030480b5375dbd76bdbc2ff5b4659927.js": "/react-template/precache-manifest.030480b5375dbd76bdbc2ff5b4659927.js",
+    "precache-manifest.945d93107a32ac6f34a798f1186506b1.js": "/react-template/precache-manifest.945d93107a32ac6f34a798f1186506b1.js",
     "service-worker.js": "/react-template/service-worker.js",
     "static/css/main.ae7b0720.chunk.css.map": "/react-template/static/css/main.ae7b0720.chunk.css.map",
-    "static/js/2.7d0a5015.chunk.js.LICENSE.txt": "/react-template/static/js/2.7d0a5015.chunk.js.LICENSE.txt",
+    "static/js/2.04089adc.chunk.js.LICENSE.txt": "/react-template/static/js/2.04089adc.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/react-template/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.e1e0d06f.js",
-    "static/js/2.7d0a5015.chunk.js",
+    "static/js/2.04089adc.chunk.js",
     "static/css/main.ae7b0720.chunk.css",
     "static/js/main.ef825609.chunk.js"
   ]
