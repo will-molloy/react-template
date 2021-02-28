@@ -20,14 +20,17 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Restore cache
+      - name: Check package.json is sorted
+        run: npx sort-package-json --check
+
+      - name: Restore npm dependencies cache
         id: npm-cache
         uses: actions/cache@v2
         with:
           path: ./node_modules
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
 
-      - name: Install dependencies
+      - name: Install npm dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
 
@@ -65,14 +68,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Restore cache
+      - name: Restore npm dependencies cache
         id: npm-cache
         uses: actions/cache@v2
         with:
           path: ./node_modules
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
 
-      - name: Install dependencies
+      - name: Install npm dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
 
