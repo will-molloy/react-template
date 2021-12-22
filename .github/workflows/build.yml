@@ -3,7 +3,7 @@ name: build
 on:
   pull_request:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -54,7 +54,7 @@ jobs:
           fail_ci_if_error: true
 
       - name: Upload build artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-latest'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@master
         with:
           name: build
@@ -62,7 +62,7 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
