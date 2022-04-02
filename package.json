@@ -2,8 +2,8 @@
   "name": "react-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wilmol.github.io/react-template/",
-  "repository": "github:wilmol/react-template",
+  "homepage": "https://will-molloy.github.io/react-template/",
+  "repository": "github:will-molloy/react-template",
   "license": "GPL-2.0",
   "scripts": {
     "build": "react-scripts build",
