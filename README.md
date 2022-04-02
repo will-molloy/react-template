@@ -1,12 +1,12 @@
 # react-template
 
-[![build](https://github.com/wilmol/react-template/workflows/build/badge.svg?event=push)](https://github.com/wilmol/react-template/actions?query=workflow%3Abuild)
-[![codecov](https://codecov.io/gh/wilmol/react-template/branch/main/graph/badge.svg)](https://codecov.io/gh/wilmol/react-template)
+[![build](https://github.com/will-molloy/react-template/workflows/build/badge.svg?event=push)](https://github.com/will-molloy/react-template/actions?query=workflow%3Abuild)
+[![codecov](https://codecov.io/gh/will-molloy/react-template/branch/main/graph/badge.svg)](https://codecov.io/gh/will-molloy/react-template)
 
 template repository for React projects
 
 ## Usage
-* Go to: https://github.com/wilmol/react-template/generate
+* Go to: https://github.com/will-molloy/react-template/generate
   * This will prompt you to create a new repository with all the files setup
 * Rename the project (currently `react-template`) to your liking
 * Configure GitHub Pages to point at the `gh-pages` branch
