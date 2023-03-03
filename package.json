@@ -46,6 +46,7 @@
     "eslint-import-resolver-typescript": "^3.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "gh-pages": "^5.0.0",
+    "jest-environment-jsdom": "^29.4.3",
     "prettier": "^2.6.1",
     "stylelint": "^15.0.0",
     "stylelint-config-standard": "^30.0.0",
