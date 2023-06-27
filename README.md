@@ -1,6 +1,7 @@
 # react-template
 
 [![build](https://github.com/will-molloy/react-template/workflows/build/badge.svg?event=push)](https://github.com/will-molloy/react-template/actions?query=workflow%3Abuild)
+[![release](https://github.com/will-molloy/react-template/workflows/release/badge.svg?event=push)](https://github.com/will-molloy/react-template/actions?query=workflow%3Arelease)
 [![codecov](https://codecov.io/gh/will-molloy/react-template/branch/main/graph/badge.svg)](https://codecov.io/gh/will-molloy/react-template)
 
 template repository for React projects
