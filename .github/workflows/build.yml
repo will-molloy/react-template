@@ -54,7 +54,7 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           name: codecov-build
-          fail_ci_if_error: true
+          fail_ci_if_error: false
 
       - name: Upload build artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' && matrix.os == 'ubuntu-latest'
