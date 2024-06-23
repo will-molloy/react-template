@@ -5,25 +5,37 @@
 
 template repo for React projects
 
+## Features
+
+- React + Typescript + [Vite](https://vitejs.dev/)
+- [pnpm](https://pnpm.io/)
+- [GitHub Actions](https://github.com/features/actions) CICD, with deployment to [GitHub Pages](https://pages.github.com/)
+- Code linting/formatting via [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
+- Test support via [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/react)
+- Code coverage reporting via [Codecov](https://codecov.io/)
+- Dependency upgrades via [Renovate bot](https://renovatebot.com)
+
 ## Usage
 
-- Go to: https://github.com/will-molloy/react-template/generate
-  - This will prompt you to create a new repository with all the files setup
+- Click [Use this template](https://github.com/will-molloy/react-template/generate)
+  - This will prompt you to create a new repo with all the files setup
 - Rename the project (currently `react-template`) to your liking
 - Configure GitHub Pages to point at the `gh-pages` branch
-- Create your README
 - Delete anything you won't use
+- Update the README
+- Other non-code setup like your GitHub branch protections
+- **NOTE:** if creating a private repo, you probably want to disable the windows and mac builds
 
 ### Install dependencies and start
 
-```
+```bash
 pnpm install
 pnpm dev
 ```
 
 ### Format code
 
-```
+```bash
 pnpm lint --fix
 ```
 
@@ -31,7 +43,4 @@ pnpm lint --fix
 
 **TBD**
 
-```
-npm run deploy
-```
 The site will be available at: `https://{username}.github.io/{repo-name}/`
