@@ -57,7 +57,7 @@ jobs:
           name: build
           path: ./build
 
-  # TODO need to figure this out again
+  # TODO need to figure this out again - build changed to dist?
   deploy:
     needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -96,7 +96,7 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./build
 
-  # TODO move to separate workflow, see java-template
+  # TODO move to separate workflow? see java-template
   release:
     needs: deploy
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'

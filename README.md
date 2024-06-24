@@ -10,7 +10,7 @@ template repo for React projects
 - React + Typescript + [Vite](https://vitejs.dev/)
 - [pnpm](https://pnpm.io/)
 - [GitHub Actions](https://github.com/features/actions) CICD, with deployment to [GitHub Pages](https://pages.github.com/)
-- Code linting/formatting via [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
+- Code linting/formatting via [ESLint](https://eslint.org/), [Prettier](https://prettier.io/) and StyleLint (TODO)
 - Test support via [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/react)
 - Code coverage reporting via [Codecov](https://codecov.io/)
 - Dependency upgrades via [Renovate bot](https://renovatebot.com)
