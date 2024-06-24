@@ -27,7 +27,8 @@ describe('App Component', () => {
 
   test('renders the instruction text', () => {
     render(<App />);
-    const instructionText = screen.getByText('Edit `src/App.tsx` and save to test HMR');
+    const instructionText = screen.getByText('Edit ', { exact: false });
+    expect(instructionText.textContent).toEqual('Edit src/App.tsx and save to test HMR');
     expect(instructionText).toBeInTheDocument();
   });
 
