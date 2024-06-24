@@ -13,6 +13,9 @@ module.exports = {
     'react': {
       'version': 'detect'
     },
+    'import/resolver': {
+      'typescript': {}
+    }
   },
   extends: [
     'eslint:recommended',
@@ -31,6 +34,7 @@ module.exports = {
     'prettier',
     'import',
     'jsx-a11y',
+    '@typescript-eslint',
   ],
   rules: {
     'react-refresh/only-export-components': [
