@@ -42,6 +42,8 @@ pnpm lint --fix
 
 ### Deploy
 
-**TBD**
+```bash
+pnpm deploy
+```
 
-The site will be available at: `https://{username}.github.io/{repo-name}/`
+The site will be available at: `https://{github_username}.github.io/react-template/`
