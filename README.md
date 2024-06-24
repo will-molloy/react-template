@@ -38,9 +38,12 @@ pnpm dev
 
 ```bash
 pnpm lint --fix
+pnpm lint:css --fix
 ```
 
 ### Deploy
+
+_note GitHub Actions will deploy automatically on commit to `main`_.
 
 ```bash
 pnpm deploy
