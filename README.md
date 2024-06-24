@@ -7,7 +7,8 @@ template repo for React projects
 
 ## Features
 
-- [React](https://react.dev/) + [Typescript](https://www.typescriptlang.org/) + [Vite](https://vitejs.dev/)
+- [React](https://react.dev/) + [Typescript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) + [SWC](https://swc.rs/)
 - [pnpm](https://pnpm.io/)
 - [GitHub Actions](https://github.com/features/actions) CICD, with deployment to [GitHub Pages](https://pages.github.com/)
 - Code linting/formatting via [ESLint](https://eslint.org/), [Prettier](https://prettier.io/) and [StyleLint](https://stylelint.io/)
