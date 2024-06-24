@@ -36,6 +36,7 @@ jobs:
         run: |
           npx sort-package-json --check
           pnpm lint
+          pnpm lint:css
 
       - name: Build
         run: pnpm build

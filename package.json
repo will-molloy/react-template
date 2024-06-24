@@ -9,6 +9,7 @@
     "dev": "vite",
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:css": "stylelint 'src/**/*.css'",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -30,6 +31,8 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "prettier": "^3.3.2",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.1",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   }
