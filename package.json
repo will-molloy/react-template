@@ -9,7 +9,7 @@
     "dev": "vite",
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:css": "stylelint 'src/**/*.css'",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\"",
     "preview": "vite preview",
     "test": "vitest run --coverage"
   },
