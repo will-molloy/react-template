@@ -5,9 +5,6 @@ on:
   push:
     branches: [ main ]
 
-permissions:
-  contents: write
-
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -16,100 +13,86 @@ jobs:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          node-version: 18
+          version: 9
 
-      - name: Check package.json is sorted
-        run: npx sort-package-json --check
-
-      - name: Restore npm dependencies cache
-        id: npm-cache
-        uses: actions/cache@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path: ./node_modules
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
+          node-version: 20
+          cache: 'pnpm'
 
-      - name: Install npm dependencies
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: ESLint analysis
-        run: npm run eslint
-
-      - name: Stylelint analysis
-        run: npm run stylelint
+      - name: Lint
+        run: |
+          npx sort-package-json --check
+          pnpm lint
+          pnpm lint:css
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
       - name: Test
-        run: npm run test
+        run: pnpm test:coverage
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           flags: unit-tests-${{ matrix.os }}
           fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Upload build artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' && matrix.os == 'ubuntu-latest'
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v4
         with:
-          name: build
-          path: ./build
+          name: dist
+          path: ./dist
 
   deploy:
     needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Restore npm dependencies cache
-        id: npm-cache
-        uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
-
-      - name: Install npm dependencies
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
-
       - name: Download build artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@v4
         with:
-          name: build
-          path: ./build
+          name: dist
+          path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./build
+          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   release:
     needs: deploy
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Bump version
         id: version
-        uses: paulhatch/semantic-version@v5.0.2
+        uses: paulhatch/semantic-version@v5.4.0
 
       - name: Create GitHub tag and release
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2.0.5
         with:
           tag_name: ${{ steps.version.outputs.version_tag }}
           generate_release_notes: true
