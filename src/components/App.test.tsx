@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from './App';
 import { describe, test, expect } from 'vitest';
+import App from './App';
 
 describe('App Component', () => {
   test('renders Vite and React logos with links', () => {

@@ -45,5 +45,10 @@ module.exports = {
     'no-console': 'warn',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    'import/no-namespace': 'error',
+    'import/order': 'error',
   },
 }
