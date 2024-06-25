@@ -24,8 +24,8 @@ template repo for React projects
 - Configure GitHub Pages to point at the `gh-pages` branch
 - Delete anything you won't use
 - Update the README
-- Other non-code setup like your GitHub branch protections
-- **NOTE:** if creating a private repo, you probably want to disable the windows and mac builds
+- Other non-code setup like GitHub branch protections
+- _**NOTE:** if creating a private repo, you probably want to disable the windows and mac builds_
 
 ### Install dependencies and start
 
@@ -41,12 +41,23 @@ pnpm lint --fix
 pnpm lint:css --fix
 ```
 
-### Deploy
-
-_note GitHub Actions will deploy automatically on commit to `main`_.
+### Test
 
 ```bash
+pnpm test
+```
+
+### Build and deploy
+
+_**NOTE:** GitHub Actions will deploy automatically on commit to `main`_
+
+```bash
+pnpm build
 pnpm deploy
 ```
 
-The site will be available at: `https://{github_username}.github.io/react-template/`
+The site will be available at: `https://{github_username}.github.io/{project_name}/`
+
+___
+
+Generated from [react-template](https://github.com/will-molloy/react-template)
