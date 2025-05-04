@@ -18,28 +18,25 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 10
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'pnpm'
+          cache-dependency-path: 'pnpm-lock.yaml'
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint
+      - name: Build and test
         run: |
           npx sort-package-json --check
           pnpm lint
           pnpm lint:css
-
-      - name: Build
-        run: pnpm build
-
-      - name: Test
-        run: pnpm test:coverage
+          pnpm test:coverage
+          pnpm build
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
