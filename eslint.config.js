@@ -7,6 +7,7 @@ import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import prettierConfig from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 export default tseslint.config(
   { ignores: ['dist', 'coverage'] },
@@ -40,6 +41,7 @@ export default tseslint.config(
       'react-refresh': reactRefresh,
       prettier,
       import: importPlugin,
+      'unused-imports': unusedImports,
       'jsx-a11y': jsxA11y,
     },
     rules: {
@@ -60,6 +62,8 @@ export default tseslint.config(
       'import/no-duplicates': 'error',
       'import/no-namespace': 'error',
       'import/order': 'error',
+      'unused-imports/no-unused-imports': 'error',
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 );
