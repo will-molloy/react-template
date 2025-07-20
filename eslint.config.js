@@ -1,15 +1,15 @@
-import js from '@eslint/js';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import react from 'eslint-plugin-react';
-import prettier from 'eslint-plugin-prettier';
-import importPlugin from 'eslint-plugin-import';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import prettierConfig from 'eslint-config-prettier';
-import tseslint from 'typescript-eslint';
-import unusedImports from 'eslint-plugin-unused-imports';
+const js = require('@eslint/js');
+const reactHooks = require('eslint-plugin-react-hooks');
+const reactRefresh = require('eslint-plugin-react-refresh');
+const react = require('eslint-plugin-react');
+const prettier = require('eslint-plugin-prettier');
+const importPlugin = require('eslint-plugin-import');
+const jsxA11y = require('eslint-plugin-jsx-a11y');
+const prettierConfig = require('eslint-config-prettier');
+const tseslint = require('typescript-eslint');
+const unusedImports = require('eslint-plugin-unused-imports');
 
-export default tseslint.config(
+module.exports = tseslint.config(
   { ignores: ['dist', 'coverage'] },
   {
     extends: [
@@ -24,7 +24,7 @@ export default tseslint.config(
       ecmaVersion: 2020,
       parserOptions: {
         project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
+        tsconfigRootDir: __dirname,
       },
     },
     settings: {
