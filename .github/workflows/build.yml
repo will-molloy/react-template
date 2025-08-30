@@ -36,12 +36,7 @@ jobs:
         run: pnpm install
 
       - name: Build and test
-        run: |
-          npx sort-package-json --check
-          pnpm lint
-          pnpm lint:css
-          pnpm test:coverage
-          pnpm build
+        run: pnpm verify:all
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
@@ -87,7 +82,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # needed for version/tag/release
 
       - name: Bump version
         id: version
