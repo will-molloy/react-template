@@ -21,7 +21,7 @@
     },
     {
       "groupName": "typescript major",
-      "description": "TS majors in their own PR so tooling lag (e.g. typescript-eslint) doesn't block the js group",
+      "description": "TS majors in their own PR so tooling lag (e.g. oxlint-tsgolint) doesn't block the js group",
       "matchPackageNames": ["typescript"],
       "matchUpdateTypes": ["major"]
     },

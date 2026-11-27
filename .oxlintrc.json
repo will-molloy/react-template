@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "jsx-a11y", "import", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error"
+  },
+  "options": {
+    "typeAware": true
+  },
+  "env": {
+    "browser": true
+  },
+  "ignorePatterns": ["dist", "coverage"],
+  "rules": {
+    "no-console": "error",
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/no-namespace": "error",
+    "import/no-unassigned-import": [
+      "error",
+      { "allow": ["**/*.css", "@testing-library/jest-dom"] }
+    ],
+    "react/only-export-components": ["error", { "allowConstantExport": true }],
+    "react/react-in-jsx-scope": "off"
+  }
+}
