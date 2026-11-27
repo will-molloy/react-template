@@ -20,12 +20,6 @@
       "matchCategories": ["js"]
     },
     {
-      "groupName": "typescript major",
-      "description": "TS majors in their own PR so tooling lag (e.g. typescript-eslint) doesn't block the js group",
-      "matchPackageNames": ["typescript"],
-      "matchUpdateTypes": ["major"]
-    },
-    {
       "groupName": "ci/cd dependencies",
       "matchCategories": ["ci", "cd", "docker"]
     },
