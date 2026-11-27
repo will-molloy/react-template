@@ -26,6 +26,11 @@
       "matchUpdateTypes": ["major"]
     },
     {
+      "description": "eslint-plugin-react, -import and -jsx-a11y don't support ESLint 10 yet",
+      "matchPackageNames": ["eslint", "@eslint/js"],
+      "allowedVersions": "<10"
+    },
+    {
       "groupName": "ci/cd dependencies",
       "matchCategories": ["ci", "cd", "docker"]
     },
