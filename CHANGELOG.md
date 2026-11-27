@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.1.12](https://github.com/will-molloy/react-template/compare/v2.1.11...v2.1.12) (2026-11-27)
+
+
+### 📦 Build
+
+* deny dependency build scripts pnpm already skips ([#274](https://github.com/will-molloy/react-template/issues/274)) ([91f5696](https://github.com/will-molloy/react-template/commit/91f5696eeae466fd738e6472a964b8486b91b1d2))
+* replace eslint and prettier with oxlint and oxfmt ([#277](https://github.com/will-molloy/react-template/issues/277)) ([5804002](https://github.com/will-molloy/react-template/commit/580400262c4b25054c13a1f6fb73d0752fd40e9b))
+
+
+### 👷 CI
+
+* fetch only commit history in check-commits ([#273](https://github.com/will-molloy/react-template/issues/273)) ([caee013](https://github.com/will-molloy/react-template/commit/caee0137940a6d0380cbf95edf1be464f2e4df5a))
+* switch releases to release-please ([#268](https://github.com/will-molloy/react-template/issues/268)) ([3705ba3](https://github.com/will-molloy/react-template/commit/3705ba32e99979f50aaa61d11b11a8b8d54a6f7d))
+
+
+### 🔧 Miscellaneous
+
+* **deps:** update ci/cd dependencies ([#270](https://github.com/will-molloy/react-template/issues/270)) ([ca0d86d](https://github.com/will-molloy/react-template/commit/ca0d86dc6efec5236bcc3044a9ec2fce51f185ed))
+* **deps:** update js dependencies ([#272](https://github.com/will-molloy/react-template/issues/272)) ([a0229e3](https://github.com/will-molloy/react-template/commit/a0229e390c25dfed5447cb2f6f1ae09de378cfa1))
+
 ## [2.1.11](https://github.com/will-molloy/react-template/compare/v2.1.10...v2.1.11) (2026-07-25)
 
 ### 👷 CI
