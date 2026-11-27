@@ -20,7 +20,7 @@
     "import/no-namespace": "error",
     "import/no-unassigned-import": [
       "error",
-      { "allow": ["**/*.css", "@testing-library/jest-dom"] }
+      { "allow": ["**/*.css", "@testing-library/jest-dom/vitest"] }
     ],
     "react/only-export-components": ["error", { "allowConstantExport": true }],
     "react/react-in-jsx-scope": "off"
