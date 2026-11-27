@@ -51,7 +51,7 @@ pnpm test
 
 ### Build and deploy
 
-_**NOTE:** GitHub Actions will deploy automatically on commit to `main`_
+_**NOTE:** GitHub Actions will deploy automatically when a release PR merges_
 
 ```bash
 pnpm build
