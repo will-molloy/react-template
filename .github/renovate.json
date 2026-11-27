@@ -2,11 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    ":semanticCommits",
-    "schedule:monthly"
+    "schedule:monthly",
+    ":semanticCommits"
   ],
   "ignorePresets": [":semanticPrefixFixDepsChoreOthers"],
   "labels": ["dependencies"],
+  "minimumReleaseAge": "3 days",
   "separateMajorMinor": false,
   "packageRules": [
     {
@@ -17,6 +18,12 @@
     {
       "groupName": "js dependencies",
       "matchCategories": ["js"]
+    },
+    {
+      "groupName": "typescript major",
+      "description": "TS majors in their own PR so tooling lag (e.g. typescript-eslint) doesn't block the js group",
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major"]
     },
     {
       "groupName": "ci/cd dependencies",
