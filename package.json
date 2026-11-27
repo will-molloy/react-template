@@ -10,14 +10,13 @@
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "format": "oxfmt \"**/*.{js,ts,tsx,css}\" package.json",
-    "format:check": "pnpm format --check",
     "preinstall": "npx only-allow pnpm",
     "lint": "oxlint --deny-warnings",
     "lint:css": "stylelint \"src/**/*.{css,scss}\"",
     "preview": "vite preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "verify:all": "concurrently --names \"format,lint,lint-css,test,build\" --prefix-colors \"blue,green,yellow,magenta,cyan\" \"pnpm format:check\" \"pnpm lint\" \"pnpm lint:css\" \"pnpm test:coverage\" \"pnpm build\""
+    "verify:all": "concurrently --names \"format,lint,lint-css,test,build\" --prefix-colors \"blue,green,yellow,magenta,cyan\" \"pnpm format --check\" \"pnpm lint\" \"pnpm lint:css\" \"pnpm test:coverage\" \"pnpm build\""
   },
   "dependencies": {
     "react": "^19.0.0",
