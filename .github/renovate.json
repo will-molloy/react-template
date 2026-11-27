@@ -2,7 +2,46 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    "schedule:monthly"
+    "schedule:monthly",
+    ":semanticCommits"
   ],
-  "labels": ["dependencies"]
+  "ignorePresets": [":semanticPrefixFixDepsChoreOthers"],
+  "labels": ["dependencies"],
+  "minimumReleaseAge": "3 days",
+  "separateMajorMinor": false,
+  "packageRules": [
+    {
+      "groupName": "other dependencies",
+      "description": "catchall for anything not specified",
+      "matchPackageNames": ["*"]
+    },
+    {
+      "groupName": "js dependencies",
+      "matchCategories": ["js"]
+    },
+    {
+      "groupName": "typescript major",
+      "description": "TS majors in their own PR so tooling lag (e.g. typescript-eslint) doesn't block the js group",
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "groupName": "ci/cd dependencies",
+      "matchCategories": ["ci", "cd", "docker"]
+    },
+    {
+      "groupName": "ci/cd dependencies",
+      "matchManagers": ["custom.regex"]
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "versions in workflows tagged with a `# renovate:` comment",
+      "managerFilePatterns": ["/^\\.github/workflows/.+\\.ya?ml$/"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+\\w+: (?<currentValue>\\S+)"
+      ]
+    }
+  ]
 }

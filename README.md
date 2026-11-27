@@ -15,6 +15,7 @@ template repo for React projects
 - Test support via ~~[Jest](https://jestjs.io/)~~ [Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com/react)
 - Code coverage reporting via [Codecov](https://codecov.io/)
 - Dependency upgrades via [Renovate bot](https://renovatebot.com)
+- Releases and changelog via [release-please](https://github.com/googleapis/release-please)
 
 ## Usage
 
@@ -22,6 +23,7 @@ template repo for React projects
   - This will prompt you to create a new repo with all the files setup
 - Rename the project (currently `react-template`) to your liking
 - Configure GitHub Pages to point at the `gh-pages` branch
+- Reset releases: delete `CHANGELOG.md`, set the `package.json` version and `.release-please-manifest.json` to `0.0.0`
 - Delete anything you won't use
 - Update the README
 - Other non-code setup like GitHub branch protections
@@ -49,7 +51,7 @@ pnpm test
 
 ### Build and deploy
 
-_**NOTE:** GitHub Actions will deploy automatically on commit to `main`_
+_**NOTE:** GitHub Actions will deploy automatically when a release PR merges_
 
 ```bash
 pnpm build
